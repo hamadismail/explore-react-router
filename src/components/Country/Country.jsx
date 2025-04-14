@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Country = ({ country }) => {
   const {
@@ -13,9 +14,11 @@ const Country = ({ country }) => {
         className="max-w-full h-auto bg-cover aspect-[3/2] rounded-lg"
         src={flag}
       />
-      <button className="btn mt-2 py-1 bg-gray-800 text-white">
-        View Details
-      </button>
+      <Link to={`/${name}`}>
+        <button className="btn mt-2 py-1 bg-gray-800 text-white">
+          View Details
+        </button>
+      </Link>
     </div>
   );
 };

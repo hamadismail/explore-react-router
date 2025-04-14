@@ -8,6 +8,7 @@ import AsianContries from './components/AsianContries/AsianContries.jsx';
 import EuropeanContries from './components/EuropeanContries/EuropeanContries.jsx';
 import AmericanCountries from './components/AmericanCountries/AmericanCountries.jsx';
 import AfricanCountries from './components/AfricanContries/AfricanCountries.jsx';
+import CountryDetails from './components/CountryDetails/CountryDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,12 @@ const router = createBrowserRouter([
         path: 'africa',
         loader: () => fetch('https://restcountries.com/v3.1/region/africa'),
         Component: AfricanCountries,
+      },
+      {
+        path: '/:countryId',
+        loader: ({ params }) =>
+          fetch(`https://restcountries.com/v3.1/name/${params.countryId}`),
+        Component: CountryDetails,
       },
     ],
   },

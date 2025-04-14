@@ -19,10 +19,26 @@ const router = createBrowserRouter([
         loader: () => fetch('https://restcountries.com/v3.1/all'),
         Component: AllCountry,
       },
-      { path: 'asia', Component: AsianContries },
-      { path: 'europe', Component: EuropeanContries },
-      { path: 'america', Component: AmericanCountries },
-      { path: 'africa', Component: AfricanCountries },
+      {
+        path: 'asia',
+        loader: () => fetch('https://restcountries.com/v3.1/region/asia'),
+        Component: AsianContries,
+      },
+      {
+        path: 'europe',
+        loader: () => fetch('https://restcountries.com/v3.1/region/europe'),
+        Component: EuropeanContries,
+      },
+      {
+        path: 'america',
+        loader: () => fetch('https://restcountries.com/v3.1/region/america'),
+        Component: AmericanCountries,
+      },
+      {
+        path: 'africa',
+        loader: () => fetch('https://restcountries.com/v3.1/region/africa'),
+        Component: AfricanCountries,
+      },
     ],
   },
 ]);

@@ -48,6 +48,14 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: '*',
+    element: (
+      <h3 className="h-screen flex items-center justify-center text-2xl">
+        <b>Not Found: 404 Status</b>
+      </h3>
+    ),
+  },
 ]);
 
 createRoot(document.getElementById('root')).render(

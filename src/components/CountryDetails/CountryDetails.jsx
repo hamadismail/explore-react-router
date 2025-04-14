@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { Navigate, useNavigate } from 'react-router';
 import { useLoaderData } from 'react-router';
 
 const CountryDetails = () => {
@@ -7,6 +7,10 @@ const CountryDetails = () => {
   const navigate = useNavigate();
 
   const [showCurrency, setShowCurrency] = useState(false);
+
+  if (!country?.[0]) {
+    return <Navigate to="*"></Navigate>;
+  }
 
   const {
     name: { common: name },

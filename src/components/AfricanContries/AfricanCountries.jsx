@@ -9,7 +9,7 @@ const AfricanCountries = () => {
     <div>
       <h2 className="text-center mb-6 font-bold text-2xl">African Countries</h2>
 
-      <div className="grid grid-cols-5 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
         {countries.map(country => (
           <Country key={country.cca2} country={country}></Country>
         ))}

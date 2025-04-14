@@ -1,21 +1,26 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const MainContainer = () => {
   return (
     <div className="pb-8 pt-4 bg-gray-600 flex justify-center">
       <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
         <li>
-          <a>Item 1</a>
+          <NavLink to="/">All</NavLink>
         </li>
         <li>
-          <a>Item 2</a>
+          <NavLink to="/asia">Asia</NavLink>
         </li>
         <li>
-          <a>Item 3</a>
+          <NavLink to="/europe">Eupore</NavLink>
+        </li>
+        <li>
+          <NavLink to="/africa">Africa</NavLink>
+        </li>
+        <li>
+          <NavLink to="/america">America</NavLink>
         </li>
       </ul>
-
-      <div className="country-container"></div>
     </div>
   );
 };

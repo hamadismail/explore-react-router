@@ -15,14 +15,15 @@ function App() {
       <Navbar></Navbar>
       <MainContainer></MainContainer>
 
-      {isNavigating && (
+      {isNavigating ? (
         <div className="flex justify-center mt-8">
           <PulseLoader color="#2f4f4f" />
         </div>
+      ) : (
+        <div className="flex justify-center gap-2 p-8">
+          <Outlet></Outlet>
+        </div>
       )}
-      <div className="flex justify-center gap-2 p-8">
-        <Outlet></Outlet>
-      </div>
 
       <Footer></Footer>
     </>

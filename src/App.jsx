@@ -4,6 +4,7 @@ import MainContainer from './components/MainContainer/MainContainer';
 import Navbar from './components/Navbar/Navbar';
 import './App.css';
 import { useNavigation } from 'react-router';
+import { PulseLoader } from 'react-spinners';
 
 function App() {
   const navigation = useNavigation();
@@ -13,12 +14,16 @@ function App() {
     <>
       <Navbar></Navbar>
       <MainContainer></MainContainer>
+
+      {isNavigating && (
+        <div className="flex justify-center mt-8">
+          <PulseLoader color="#2f4f4f" />
+        </div>
+      )}
       <div className="flex justify-center gap-2 p-8">
-        {isNavigating && (
-          <span className="loading loading-ring loading-xl"></span>
-        )}
         <Outlet></Outlet>
       </div>
+
       <Footer></Footer>
     </>
   );
